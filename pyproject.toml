@@ -11,6 +11,9 @@ django = "4.2.2"
 djangorestframework = "^3.15.2"
 python-dotenv = "^1.0.1"
 psycopg2 = "^2.9.10"
+django-phonenumber-field = "^8.0.0"
+pillow = "^11.1.0"
+black = "^25.1.0"
 
 
 [build-system]
