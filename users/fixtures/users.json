@@ -1,0 +1,20 @@
+[
+    {
+        "model": "users.user",
+        "pk": 1,
+        "fields": {
+            "email": "user1@example.com",
+            "phone_number": "+79991234567",
+            "city": "Москва"
+        }
+    },
+    {
+        "model": "users.user",
+        "pk": 2,
+        "fields": {
+            "email": "user2@example.com",
+            "phone_number": "+79998765432",
+            "city": "Санкт-Петербург"
+        }
+    }
+]
