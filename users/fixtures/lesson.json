@@ -1,0 +1,35 @@
+[
+    {
+        "model": "materials.lesson",
+        "pk": 1,
+        "fields": {
+            "name": "Введение в Python",
+            "description": "Основы языка программирования Python.",
+            "preview": "materials/lesson/preview/python_intro.jpg",
+            "link_to_the_video": "https://www.youtube.com/watch?v=example1",
+            "course": 1
+        }
+    },
+    {
+        "model": "materials.lesson",
+        "pk": 2,
+        "fields": {
+            "name": "Основы Django",
+            "description": "Создание веб-приложений с использованием Django.",
+            "preview": "materials/lesson/preview/django_basics.jpg",
+            "link_to_the_video": "https://www.youtube.com/watch?v=example2",
+            "course": 1
+        }
+    },
+    {
+        "model": "materials.lesson",
+        "pk": 3,
+        "fields": {
+            "name": "Работа с базами данных",
+            "description": "Использование ORM в Django для работы с базами данных.",
+            "preview": null,
+            "link_to_the_video": "https://www.youtube.com/watch?v=example3",
+            "course": 2
+        }
+    }
+]
