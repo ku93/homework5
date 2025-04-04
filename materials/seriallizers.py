@@ -7,7 +7,7 @@ from users.models import Payment, User
 
 
 class LessonSerializer(ModelSerializer):
-    video_link = serializers.URLField(validators=[validate_video_link])
+    link_to_the_video = serializers.URLField(validators=[validate_video_link])
     class Meta:
         model = Lesson
         fields = "__all__"
