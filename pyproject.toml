@@ -16,6 +16,7 @@ isort = "^6.0.1"
 flake8 = "^7.1.2"
 django = "^5.2"
 djangorestframework = "^3.16.0"
+stripe = "^12.0.0"
 
 
 [build-system]
