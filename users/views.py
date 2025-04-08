@@ -1,9 +1,10 @@
 from rest_framework.generics import CreateAPIView
 from rest_framework.permissions import AllowAny
 
-from users.models import User, Payment
-from users.seriallizers import UserSerializer, PaymentSerializer
-from users.services import convert_rub_to_dollars, create_stripe_price, create_stripe_session
+from users.models import Payment, User
+from users.seriallizers import PaymentSerializer, UserSerializer
+from users.services import (convert_rub_to_dollars, create_stripe_price,
+                            create_stripe_session)
 
 
 class UserCreateAPIView(CreateAPIView):
@@ -15,6 +16,7 @@ class UserCreateAPIView(CreateAPIView):
         user = serializer.save(is_active=True)
         user.set_password(user.password)
         user.save()
+
 
 class PaymentCreateAPIView(CreateAPIView):
     serializer_class = PaymentSerializer

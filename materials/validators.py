@@ -7,8 +7,8 @@ def validate_video_link(value):
     """
     Проверяет, что ссылка ведет на youtube.com.
     """
-    if not re.match(r'https?://(www\.)?youtube\.com/watch\?v=', value):
-        raise ValidationError('Ссылка должна вести на видео с youtube.com.')
+    if not re.match(r"https?://(www\.)?youtube\.com/watch\?v=", value):
+        raise ValidationError("Ссылка должна вести на видео с youtube.com.")
 
 
 class VideoLinkValidator:
