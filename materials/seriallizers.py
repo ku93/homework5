@@ -8,6 +8,7 @@ from users.models import Payment, User
 
 class LessonSerializer(ModelSerializer):
     link_to_the_video = serializers.URLField(validators=[validate_video_link])
+
     class Meta:
         model = Lesson
         fields = "__all__"
@@ -21,7 +22,10 @@ class CourseSerializer(ModelSerializer):
 
 class CourseDetailSerializer(ModelSerializer):
     lesson_count = SerializerMethodField()
-    lessons = LessonSerializer(many=True, read_only=True,)
+    lessons = LessonSerializer(
+        many=True,
+        read_only=True,
+    )
 
     def get_lesson_count(self, obj):
         return obj.lessons.count()

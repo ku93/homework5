@@ -73,9 +73,7 @@ class Payment(models.Model):
         verbose_name="Оплаченный урок",
         help_text="Урок, за который произведена оплата",
     )
-    amount = models.DecimalField(
-        max_digits=10,
-        decimal_places=2,
+    amount = models.PositiveIntegerField(
         verbose_name="Сумма оплаты",
         help_text="Сумма платежа в валюте",
     )
@@ -84,6 +82,21 @@ class Payment(models.Model):
         choices=PAYMENT_METHOD_CHOICES,
         verbose_name="Способ оплаты",
         help_text="Способ оплаты: наличные или перевод на счет",
+    )
+    session_id = models.CharField(
+        max_length=255,
+        blank=True,
+        null=True,
+        verbose_name="ID сессии",
+        help_text="ID сессии, в которой был совершен платеж",
+    )
+
+    link = models.URLField(
+        max_length=400,
+        blank=True,
+        null=True,
+        verbose_name="Ссылка на оплату",
+        help_text="Ссылка на оплату, доступная для пользователей",
     )
 
     def __str__(self):

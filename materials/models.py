@@ -1,4 +1,3 @@
-from django.conf import settings
 from django.db import models
 
 
@@ -31,6 +30,8 @@ class Course(models.Model):
         blank=True,
         null=True,
     )
+    subscribers = models.ManyToManyField("users.User", related_name="subscriptions")
+    updated_at = models.DateTimeField(auto_now=True)
 
     class Metta:
         verbose_name = "Курс"
@@ -80,11 +81,3 @@ class Lesson(models.Model):
     class Meta:
         verbose_name = "Урок"
         verbose_name_plural = "Уроки"
-
-class Subscription(models.Model):
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='subscriptions')
-    course = models.ForeignKey(Course, on_delete=models.CASCADE, related_name='subscriptions')
-
-    class Meta:
-        unique_together = ('user', 'course')
-
